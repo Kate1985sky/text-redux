@@ -1,21 +1,30 @@
-
+import { useDispatch } from "react-redux";
+import { clearCart } from "../cart/cartSlice";
+import { closeModal } from "../features/modal/modalSlice";
 
 const Modal = () => {
-  return;
-  <div className="modal-container">
+  const dispatch = useDispatch();
+  return (
+  <aside className="modal-container">
     <div className="modal">
       <h4>
         remove all items from your shopping cart?
         <div className="btn-container">
-          <button type="button" className="btn-confirm-btn">
+          <button type="button" className="btn-confirm-btn" onClick={() => {
+            dispatch(clearCart())
+            dispatch(closeModal())
+          }}>
             confirm
           </button>
-          <button type="button" className="btn-clear-btn">
+          <button type="button" className="btn-clear-btn" onClick={() => {
+            dispatch(closeModal())
+          }}>
             cancel
           </button>
         </div>
       </h4>
     </div>
-  </div>;
+  </aside>
+  )
 };
 export default Modal;
