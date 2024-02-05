@@ -1,7 +1,7 @@
 {
   "name": "redux",
   "version": "0.1.0",
-  "homepage": "https://gitname.github.io/react-gh-pages",
+  "homepage": "https://gitname.github.io/text-redux",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^2.1.0",
