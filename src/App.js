@@ -1,9 +1,12 @@
 import Navbar from "./components/Navbar";
-import CartContainer from "./components/CartContainer";
 import { useDispatch, useSelector } from "react-redux";
-import { calculateTotals, getCartItems } from "./cart/cartSlice";
+import { calculateTotals, getCartItems } from "./features/cart/cartSlice";
 import { useEffect } from "react";
 import Modal from "./components/Modal";
+import { BrowserRouter } from "react-router-dom";
+import React from "react";
+import Main from "./components/Main";
+
 
 function App() {
   const { cartItems, isLoading } = useSelector((store) => store.cart);
@@ -19,18 +22,21 @@ function App() {
   }, []);
 
   if (isLoading) {
-    return <div className="loading">
-      <h1>Loading...</h1>
-    </div>
+    return (
+      <div className="loading">
+        <h1>Loading...</h1>
+      </div>
+    );
   }
 
-
   return (
-    <main>
-      {isOpen && <Modal />}
-      <Navbar />
-      <CartContainer />
-    </main>
+    <BrowserRouter>
+      <main>
+        {isOpen && <Modal />}
+        <Navbar />
+        <Main />
+      </main>
+    </BrowserRouter>
   );
 }
 

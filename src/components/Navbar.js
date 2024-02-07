@@ -1,22 +1,34 @@
-import {CartIcon} from "../icons";
+import { CartIcon } from "../icons";
 import { useSelector } from "react-redux";
+import { NavLink } from "react-router-dom";
+import React from "react";
 
 const Navbar = () => {
-const {amount} = useSelector((store)=> store.cart)
+  const { amount } = useSelector((store) => store.cart);
 
-    return (
-        <nav>
-            <div className="nav-center">
-                <h3>redux toolkit</h3>
-                <div className="nav-container">
-                    <CartIcon />
-                    <div className="amount-container">
-                        <p className="total-amount">{amount}</p>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    )
-}
+  return (
+    <nav>
+      <div className="nav-center">
+        {/* <h3>redux toolkit</h3> */}
+        <NavLink as={NavLink} to="/">
+          redux toolkit
+        </NavLink>
+        <NavLink as={NavLink} to="/search">
+          search
+        </NavLink>
+        <NavLink as={NavLink} to="/add">
+        + add
+        </NavLink>
+
+        <div className="nav-container">
+          <CartIcon />
+          <div className="amount-container">
+            <p className="total-amount">{amount}</p>
+          </div>
+        </div>
+      </div>
+    </nav>
+  );
+};
 
 export default Navbar;
