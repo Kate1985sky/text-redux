@@ -13,7 +13,7 @@ const initialState = {
 
 export const getCartItems = createAsyncThunk(
   "cart/getCartItems",
-  async (name, thunkAPI) => {
+  async (movies, thunkAPI) => {
     try {
       const resp = await axios(url);
       return resp.data;

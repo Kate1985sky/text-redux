@@ -321,4 +321,25 @@ Search-container
 .search-container {
   display: flex;
   justify-content: center;
+  margin-top: 50px;
+}
+
+input {
+  width: 290px;
+  height: 50px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+.btn-search {
+  margin-left: 20px;
+  width: 150px;
+  height: 50px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  /* background-color: clr-primary; */
+}
+span {
+  font-size: 20px;
 }
