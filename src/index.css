@@ -323,7 +323,9 @@ Search-container
   justify-content: center;
   margin-top: 50px;
 }
-
+::placeholder {
+  padding-left: 5px;
+}
 input {
   width: 290px;
   height: 50px;
@@ -338,8 +340,50 @@ input {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  /* background-color: clr-primary; */
+  background-color: var(--clr-primary-light);
+  color: var(--clr-grey-5);
+}
+.btn-search:hover {
+  background-color: var(--clr-grey-5);
+  opacity: 0.5;
+  color: var(--clr-grey-1);
+  transition: 0.5s;
 }
 span {
   font-size: 20px;
+}
+
+/*
+=============== 
+new cart
+===============
+*/
+
+.addCart {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: 25px;
+  align-items: center;
+  text-align: center;
+}
+.form-input {
+  display: block;
+}
+.form {
+  padding: 5px;
+}
+.submit {
+  width: 150px;
+  height: 50px;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--clr-red-light);
+  color: var(--clr-grey-10);
+  cursor: pointer;
+}
+.submit:hover {
+  background-color:rgba(0, 0, 0, 0.2);
+  transition: 0.5s;
 }

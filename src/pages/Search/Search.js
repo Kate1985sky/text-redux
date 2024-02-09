@@ -4,16 +4,23 @@ import { useDispatch, useSelector } from "react-redux";
 import { searchItem } from "../../features/search/searchSlice";
 import {getCartItems} from "../../features/cart/cartSlice";
 
-export const Search = () => {
+export const Search = ({cartItems}) => {
   const [input, setInput] = useState("");
   const dispatch = useDispatch();
 
-  const { cartItems } = useSelector((store) => store.cart);
-  // const { value } = useSelector((store) => store.search);
+  // const { cartItems } = useSelector((store) => store.cart);
+  // const { showItem } = useSelector((store) => store.search);
+
+  // if (input.length >= 3) {
+  //   Navigate(`/search?q=${input}`)
+  // } else {
+  //   alert("sorry, at least 3 chars!")
+  // }
 
   const submitChange = (e) => {
     e.preventDefault();
-    dispatch(getCartItems(input));
+    dispatch(getCartItems(searchItem));
+    console.log(input);
     setInput("");
   };
 
