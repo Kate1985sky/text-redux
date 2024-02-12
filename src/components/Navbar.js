@@ -10,7 +10,7 @@ const Navbar = () => {
     <nav>
       <div className="nav-center">
         <NavLink as={NavLink} to="/">
-          redux toolkit
+          <h3>redux toolkit</h3>
         </NavLink>
         <NavLink as={NavLink} to="/search">
           search
