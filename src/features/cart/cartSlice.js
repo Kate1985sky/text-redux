@@ -3,7 +3,7 @@ import axios from "axios";
 
 
 const url = "https://course-api.com/react-useReducer-cart-project";
-console.log(url);
+
 
 const initialState = {
   cartItems: [],
