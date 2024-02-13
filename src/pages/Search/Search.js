@@ -1,38 +1,46 @@
 import React, { useState } from "react";
-import CartItem from "../../components/CartItem";
-import { useDispatch, useSelector } from "react-redux";
-import { searchItem } from "../../features/search/searchSlice";
-import {getCartItems} from "../../features/cart/cartSlice";
+import {useSelector, useDispatch} from "react-redux";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import {CatalogItem} from "../../components/CatalogItem";
+import {searchItem} from "../../features/search/searchSlice";
 
-export const Search = ({cartItems}) => {
-  const [input, setInput] = useState("");
+export const Search = () => {
   const dispatch = useDispatch();
 
-  // const { cartItems } = useSelector((store) => store.cart);
-  // const { showItem } = useSelector((store) => store.search);
+  let [searchParams] = useSearchParams();
+  
+  const searchRequest = searchParams.get("q");
+  
+  let navigate = useNavigate();
+  const [search, setSearch] = useState(searchRequest ?? "");
 
-  // if (input.length >= 3) {
-  //   Navigate(`/search?q=${input}`)
-  // } else {
-  //   alert("sorry, at least 3 chars!")
-  // }
 
-  const submitChange = (e) => {
-    e.preventDefault();
-    dispatch(getCartItems(searchItem));
-    console.log(input);
-    setInput("");
+  const submitHandler = (event) => {
+    event.preventDefault();
+
+    if (search.length >= 3) {
+      navigate(`/search?q=${search}`);
+    } else {
+      alert("sorry, at least 3 chars!");
+    }
   };
+
+  const { items } = useSelector((store) => store.catalog);
+  const { isLoad } = useSelector((store) => store.search);
+
+
+  const filteredItems = items.filter((item) => item.title.includes(searchRequest));
+  console.log(filteredItems);
 
   return (
     <>
       <div className="search-container">
-        <form onSubmit={submitChange}>
+        <form onSubmit={submitHandler}>
           <label>
             <input
               type="text"
-              onChange={(e) => setInput(e.target.value)}
-              value={input}
+              onChange={(e) => setSearch(e.target.value)}
+              value={search}
               name="text"
               placeholder="Search here!"
             />
@@ -40,18 +48,21 @@ export const Search = ({cartItems}) => {
           <button
             type="submit"
             className="btn-search"
+            onClick={() => {dispatch(searchItem(filteredItems))}}
           >
             <span>go ahead</span>
           </button>
         </form>
       </div>
-      {/* <section className="cart">
+       <section className="cart">
         <div>
-          {cartItems.map((item) => {
-            return <CartItem key={item.id} {...item} />;
-          })}
+          {isLoad ? (filteredItems.map((item) => {
+            return <CatalogItem key={item.id} {...item}/>
+          })) : (null)}
+          
         </div>
-      </section> */}
+      </section>
     </>
   );
 };
+

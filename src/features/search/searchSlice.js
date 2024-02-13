@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    selectItem: [],
+    isLoad: false,
 }
 
 const searchSlice = createSlice({
@@ -9,12 +9,15 @@ const searchSlice = createSlice({
     initialState,
     reducers: {
         searchItem : (state, action) => {
-            const itemId = action.payload;
-            const showItem = state.selectItem.find((item) => item.id === itemId); 
+            const showItem = action.payload;
+            console.log(showItem);
+            state.isLoad = true;
         },
+        
     }
 })
 
-export const {showItem, searchItem} = searchSlice.actions;
+
+export const {searchItem} = searchSlice.actions;
 
 export default searchSlice.reducer;

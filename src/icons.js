@@ -1,5 +1,8 @@
+import { NavLink } from "react-router-dom";
+
 export const CartIcon = () => {
     return (
+      <NavLink as={NavLink} to="/bucket">
       <svg
         xmlns='http://www.w3.org/2000/svg'
         className='h-6 w-6 '
@@ -16,6 +19,7 @@ export const CartIcon = () => {
           d='M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z'
         />
       </svg>
+      </NavLink>
     );
   };
   
