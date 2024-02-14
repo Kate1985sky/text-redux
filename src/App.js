@@ -6,7 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 import React from "react";
 import Main from "./components/Main";
 import { fetchItems } from "./features/catalog/catalogSlice";
-import { EditorProvider } from "./hooks/EditorProvider";
+// import {EditorProvider} from "./hooks/EditorProvider";
 
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
   // }
 
   return (
-    <EditorProvider>
+    
     <BrowserRouter>
       <main>
         {isOpen && <Modal />}
@@ -35,7 +35,7 @@ function App() {
         <Main />
       </main>
     </BrowserRouter>
-    </EditorProvider>
+   
   );
 }
 
