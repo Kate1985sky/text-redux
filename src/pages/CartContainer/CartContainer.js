@@ -7,7 +7,7 @@ const CartContainer = () => {
   const dispatch = useDispatch();
 
   const { items, isLoading } = useSelector((store) => store.catalog);
-
+console.log(items);
   if (items.length === 0) {
     return (
       <section className="cart">

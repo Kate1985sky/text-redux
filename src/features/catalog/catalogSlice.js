@@ -9,35 +9,29 @@ const url = "https://course-api.com/react-useReducer-cart-project";
 const initialState = {
   items: [],
   isLoading: true,
-  
+  localStorage: {},
 };
 
 // function saveToLocalStorage(state) {
 //   try {
 //     const serialisedState = JSON.stringify(state);
-//     localStorage.setItem("persistantState", serialisedState);
+//     localStorage.setItem("catalog", serialisedState);
 //   } catch (e) {
 //     console.warn(e);
 //   }
 // }
 
-// // load string from localStarage and convert into an Object
-// // invalid output must be undefined
-// function loadFromLocalStorage() {
-//   try {
-//     const serialisedState = localStorage.getItem("persistantState");
-//     if (serialisedState === null) return undefined;
-//     return JSON.parse(serialisedState);
-//   } catch (e) {
-//     console.warn(e);
-//     return undefined;
-//   }
-// }
+function loadFromLocalStorage() {
+  try {
+    const serialisedState = localStorage.getItem("catalog");
+    if (serialisedState === null) return undefined;
+    return JSON.parse(serialisedState);
+  } catch (e) {
+    console.warn(e);
+    return undefined;
+  }
+}
 
-
-// const persistedState = localStorage.getItem('catalog') 
-//                        ? JSON.parse(localStorage.getItem('catalog'))
-//                        : []
 
 
 

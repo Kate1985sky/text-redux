@@ -1,9 +1,10 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import React from "react";
-import addItemInBucket from "../features/bucket/bucketSlice";
+import {addItemInBucket} from "../features/bucket/bucketSlice";
 
 export const CatalogItem = ({ id, img, title, price }) => {
   const dispatch = useDispatch();
+  const { items } = useSelector((store) => store.catalog);
 
   return (
     <article className="cart-item">

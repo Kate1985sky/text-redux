@@ -1,15 +1,24 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  inBucket: false,
+  inBucket: [],
+  total: 0,
+  amount: 0,
 };
 
 const bucketSlice = createSlice({
   name: "bucket",
   initialState,
   reducers: {
-    addItemInBucket: (state) => {
-      state.inBucket = true;
+    addItemInBucket: (state, action) => {
+      // const itemIdBucket = action.payload;
+      const itemId = action.payload;
+      state.inBucket = state.inBucket.filter((item) => item.id !== itemId);
+
+      // state.inBucket = state.inBucket.concat(payload);
+
+      
+      
     },
   },
 });

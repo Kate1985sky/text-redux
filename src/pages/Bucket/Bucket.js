@@ -1,11 +1,16 @@
-import { CatalogItem } from "../../components/CatalogItem";
-import { useDispatch, useSelector } from "react-redux";
+import { CartItem } from "../../components/CartItem";
 
-export const Bucket = ({inBucket}) => {
-//   const { inBucket } = useSelector((store) => store.bucket);
+export const Bucket = ({ inBucket }) => {
+  console.log("bucket", inBucket);
 
-  if (inBucket) {
-    return <CatalogItem />;
+  if (inBucket.length > 0) {
+    return (
+    <div>
+        {inBucket.map((item) => {
+          return <CartItem key={item.id} {...item}/>;
+        })}
+      </div>
+    )
   }
   return (
     <div className="emptyContainer">
