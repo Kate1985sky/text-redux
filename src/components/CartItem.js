@@ -39,6 +39,15 @@ export const CartItem = ({ id, img, title, price, amount }) => {
           <ChevronDown />
         </button>
       </div>
+      {/* <footer>
+        <hr />
+        <div className="cart-total">
+          <h4>
+            total <span>${total.toFixed(2)}</span>
+          </h4>
+        </div>
+        <button className="btn clear-btn" onClick={() => dispatch(openModal())}>clear cart</button>
+      </footer> */}
     </article>
   );
 };

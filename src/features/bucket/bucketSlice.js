@@ -11,7 +11,9 @@ const bucketSlice = createSlice({
   name: "bucket",
   initialState,
   reducers: {
-    addItemInBucket: (state, action) => {},
+    addItemInBucket: (state, action) => {
+      state.inBucket = state.inBucket.concat(action.payload);
+    },
     clearCart: (state) => {
       state.inBucket = [];
     },

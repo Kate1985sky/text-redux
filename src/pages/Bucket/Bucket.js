@@ -1,20 +1,22 @@
 import { CartItem } from "../../components/CartItem";
+import { useSelector } from "react-redux";
 
-export const Bucket = ({ inBucket }) => {
-  console.log("bucket", inBucket);
+export const Bucket = () => {
+  const { inBucket } = useSelector((store) => store.bucket);
+  // console.log("bucket", inBucket);
 
-  if (inBucket.length > 0) {
+  if (inBucket.length === 0) {
     return (
-    <div>
-        {inBucket.map((item) => {
-          return <CartItem key={item.id} {...item}/>;
-        })}
+      <div className="emptyContainer">
+        <h3>Nothing adding here</h3>
       </div>
-    )
+    );
   }
   return (
-    <div className="emptyContainer">
-      <h3>Nothing adding here</h3>
+    <div>
+      {inBucket.map((item) => {
+        return <CartItem key={item.id} {...item} />;
+      })}
     </div>
   );
 };

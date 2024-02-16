@@ -28,15 +28,7 @@ console.log(items);
           return <CatalogItem key={item.id} {...item}/>;
         })}
       </div>
-      {/* <footer>
-        <hr />
-        <div className="cart-total">
-          <h4>
-            total <span>${total.toFixed(2)}</span>
-          </h4>
-        </div>
-        <button className="btn clear-btn" onClick={() => dispatch(openModal())}>clear cart</button>
-      </footer> */}
+      
     </section>
   );
 };
