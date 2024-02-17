@@ -10,7 +10,6 @@ export const CatalogItem = ({ id, img, title, price }) => {
 
   const findCart = items.filter((item) => item.id === idCartInBucket);
 
-  console.log("findcart", findCart);
 
   return (
     <article className="cart-item">
@@ -19,8 +18,8 @@ export const CatalogItem = ({ id, img, title, price }) => {
         <h4>{title}</h4>
         <h4 className="item-price">${price}</h4>
       </div>
-
       <button
+        className="btn"
         onClick={() => {
           dispatch(addItemInBucket(findCart));
         }}
