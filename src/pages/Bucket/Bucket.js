@@ -1,9 +1,11 @@
 import { CartItem } from "../../components/CartItem";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { openModal } from "../../features/modal/modalSlice";
 
 export const Bucket = () => {
+  const dispatch = useDispatch();
   const { inBucket } = useSelector((store) => store.bucket);
-  // console.log("bucket", inBucket);
+  const { total } = useSelector((store) => store.bucket);
 
   if (inBucket.length === 0) {
     return (
@@ -13,20 +15,21 @@ export const Bucket = () => {
     );
   }
   return (
+    <section>
     <div>
       {inBucket.map((item) => {
         return <CartItem key={item.id} {...item} />;
       })}
     </div>
+    <footer>
+    <hr />
+    <div className="cart-total">
+      <h4>
+        total <span>${total.toFixed(2)}</span>
+      </h4>
+    </div>
+    <button className="btn clear-btn" onClick={() => dispatch(openModal())}>clear cart</button>
+  </footer>
+  </section>
   );
 };
-
-// <article className="cart-item">
-//   {inBuket ? (
-//     <CatalogItem />
-//   ) : (
-//     <div>
-//       <h3>Nothing adding here</h3>
-//     </div>
-//   )}
-// </article>

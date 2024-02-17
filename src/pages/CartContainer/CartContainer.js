@@ -1,13 +1,9 @@
-import CartItem from "../../components/CartItem";
-import { useDispatch, useSelector } from "react-redux";
-import { openModal } from "../../features/modal/modalSlice";
-import {CatalogItem} from "../../components/CatalogItem";
+import { useSelector } from "react-redux";
+import { CatalogItem } from "../../components/CatalogItem";
 
 const CartContainer = () => {
-  const dispatch = useDispatch();
-
-  const { items, isLoading } = useSelector((store) => store.catalog);
-console.log(items);
+ const { items } = useSelector((store) => store.catalog);
+ 
   if (items.length === 0) {
     return (
       <section className="cart">
@@ -25,10 +21,9 @@ console.log(items);
       </header>
       <div>
         {items.map((item) => {
-          return <CatalogItem key={item.id} {...item}/>;
+          return <CatalogItem key={item.id} {...item} />;
         })}
       </div>
-      
     </section>
   );
 };

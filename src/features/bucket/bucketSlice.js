@@ -46,6 +46,13 @@ const bucketSlice = createSlice({
   },
 });
 
-export const { addItemInBucket, removeItem, clearCart, increase, dicrease, calculateTotals } = bucketSlice.actions;
+export const {
+  addItemInBucket,
+  removeItem,
+  clearCart,
+  increase,
+  dicrease,
+  calculateTotals,
+} = bucketSlice.actions;
 
 export default bucketSlice.reducer;
