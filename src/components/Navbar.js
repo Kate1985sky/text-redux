@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import React from "react";
 
 const Navbar = () => {
-  const { amount } = useSelector((store) => store.cart);
+  const { amount } = useSelector((store) => store.bucket);
 
   return (
     <nav>

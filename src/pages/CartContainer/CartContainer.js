@@ -2,7 +2,15 @@ import { useSelector } from "react-redux";
 import { CatalogItem } from "../../components/CatalogItem";
 
 const CartContainer = () => {
- const { items } = useSelector((store) => store.catalog);
+ const { items, isLoading } = useSelector((store) => store.catalog);
+
+ if (isLoading) {
+    return (
+      <div className="loading">
+        <h1>Loading...</h1>
+      </div>
+    );
+  }
  
   if (items.length === 0) {
     return (

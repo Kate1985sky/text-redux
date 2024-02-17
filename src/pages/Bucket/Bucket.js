@@ -1,6 +1,6 @@
 import { CartItem } from "../../components/CartItem";
 import { useSelector, useDispatch } from "react-redux";
-import { openModal } from "../../features/modal/modalSlice";
+import { clearCart } from "../../features/bucket/bucketSlice";
 
 export const Bucket = () => {
   const dispatch = useDispatch();
@@ -15,7 +15,7 @@ export const Bucket = () => {
     );
   }
   return (
-    <section>
+    <section className="cart">
     <div>
       {inBucket.map((item) => {
         return <CartItem key={item.id} {...item} />;
@@ -28,7 +28,7 @@ export const Bucket = () => {
         total <span>${total.toFixed(2)}</span>
       </h4>
     </div>
-    <button className="btn clear-btn" onClick={() => dispatch(openModal())}>clear cart</button>
+    <button className="btn clear-btn" onClick={() => dispatch(clearCart())}>clear cart</button>
   </footer>
   </section>
   );

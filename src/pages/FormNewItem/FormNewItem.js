@@ -1,7 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addItem } from "../../features/catalog/catalogSlice";
-
 
 const defaultFormValues = {
   title: "",
@@ -9,19 +8,18 @@ const defaultFormValues = {
 };
 
 export const FormNewItem = () => {
-  
   const [item, setItem] = useState(defaultFormValues);
 
   const dispatch = useDispatch();
-
-  const resetForm = () => {
-    setItem(defaultFormValues);
-  };
 
   const submitForm = (e) => {
     e.preventDefault();
 
     resetForm();
+  };
+
+  const resetForm = () => {
+    setItem(defaultFormValues);
   };
 
   const hendlerChange = (e) => {
@@ -33,8 +31,6 @@ export const FormNewItem = () => {
       amount: 1,
     }));
   };
-
-  
 
   return (
     <div className="addCart">
@@ -52,7 +48,7 @@ export const FormNewItem = () => {
         <label className="form">
           <input
             className="form-input"
-            type="number"
+            type="text"
             onChange={hendlerChange}
             value={item["price"]}
             name="price"
