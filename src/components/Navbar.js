@@ -18,6 +18,9 @@ const Navbar = () => {
         <NavLink as={NavLink} to="/add">
         + add
         </NavLink>
+        <NavLink as={NavLink} to="/login">
+        log in
+        </NavLink>
 
         <div className="nav-container">
           <CartIcon />
