@@ -16,6 +16,7 @@ const bucketSlice = createSlice({
     },
     clearCart: (state) => { 
       state.inBucket = [];
+      state.amount = 0;
     },
     removeItem: (state, action) => {
       const itemId = action.payload;
@@ -26,7 +27,7 @@ const bucketSlice = createSlice({
         (item) => item.id === payload.id
       );
       cartItemBuckit.amount = cartItemBuckit.amount + 1;
-      cartItemBuckit.total = cartItemBuckit.total * cartItemBuckit.price;
+      cartItemBuckit.total = cartItemBuckit.total + cartItemBuckit.price;
     },
     dicrease: (state, { payload }) => {
       const cartItemBuckit = state.inBucket.find(

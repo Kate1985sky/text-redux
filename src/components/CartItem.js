@@ -34,6 +34,7 @@ export const CartItem = ({ id, img, title, price, amount }) => {
           onClick={() => {
             if (amount === 1) {
               dispatch(removeItem(id));
+              dispatch(calculateTotals());
               return;
             }
             dispatch(dicrease({ id }));
