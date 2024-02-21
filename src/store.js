@@ -1,46 +1,39 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
-import cartReducer from "./features/cart/cartSlice";
 import modalReducer from "./features/modal/modalSlice";
 import catalogReducer from "./features/catalog/catalogSlice";
 import searchReducer from "./features/search/searchSlice";
 import bucketReducer from "./features/bucket/bucketSlice";
-import {
-  persistStore,
-  persistReducer,
-  FLUSH,
-  REHYDRATE,
-  PAUSE,
-  PERSIST,
-  PURGE,
-  REGISTER,
-} from "redux-persist";
-import storage from "redux-persist/lib/storage";
+import authSlice from "./features/auth/authSlice";
 
-const rootReduser = combineReducers({
-  cart: cartReducer,
+function saveItemsLocalStorage({ getState }) {
+  return next => action => {
+    const returnValue = next(action)
+
+    if(action.type === "catalog/addItem") {
+      localStorage.setItem("catalog", JSON.stringify(getState().catalog.items))
+    }
+
+    if(action.type === "catalog/fetchItems/fulfilled") {
+      if(localStorage.getItem("catalog") === null) {
+        localStorage.setItem("catalog", JSON.stringify(getState().catalog.items))
+      }
+    }
+
+    return returnValue
+  }
+}
+
+const rootReducer = combineReducers({
   modal: modalReducer,
   catalog: catalogReducer, 
   search: searchReducer,
   bucket: bucketReducer,
+  auth: authSlice.reducer
 })
 
 
-const persistConfig = {
-  key: "root",
-  storage,
-};
-
-const persistedReducer = persistReducer(persistConfig, rootReduser);
-
 const store = configureStore({
-  reducer: persistedReducer,
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware({
-      serializableCheck: {
-        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-      },
-    }),
+  reducer: rootReducer,
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(saveItemsLocalStorage)
 });
-
-export const persistor = persistStore(store);
 export default store;

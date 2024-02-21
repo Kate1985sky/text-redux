@@ -4,9 +4,8 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 const url = "https://course-api.com/react-useReducer-cart-project";
 
 const initialState = {
-  items: [],
-  
   // items: JSON.parse(localStorage.getItem("catalog")),
+  items: [],
   isLoading: true,
 };
 
@@ -28,6 +27,8 @@ const catalogSlice = createSlice({
   reducers: {
     addItem: (state, action) => {
       state.items = state.items.concat(action.payload);
+      
+      // state.items = localStorage.setItem("catalog", JSON.stringify(action.payload));
     },
   },
   extraReducers: (builder) => {
@@ -38,7 +39,7 @@ const catalogSlice = createSlice({
       .addCase(fetchItems.fulfilled, (state, action) => {
         state.isLoading = false;
         state.items = action.payload;
-        // localStorage.setItem("catalog", JSON.stringify(action.payload));
+        
       })
       .addCase(fetchItems.rejected, (state) => {
         state.isLoading = false;
