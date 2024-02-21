@@ -4,14 +4,18 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 const url = "https://course-api.com/react-useReducer-cart-project";
 
 const initialState = {
-  // items: JSON.parse(localStorage.getItem("catalog")),
-  items: [],
+  items: localStorage.getItem("catalog")
+    ? JSON.parse(localStorage.getItem("catalog"))
+    : [],
   isLoading: true,
 };
 
 export const fetchItems = createAsyncThunk(
   "catalog/fetchItems",
-  async (thunkAPI) => {
+  async (thunkAPI, { getState }) => {
+    if (getState().catalog.items.length > 0) {
+      return thunkAPI.rejectWithValue("something");
+    }
     try {
       const resp = await axios(url);
       return resp.data;
@@ -27,8 +31,6 @@ const catalogSlice = createSlice({
   reducers: {
     addItem: (state, action) => {
       state.items = state.items.concat(action.payload);
-      
-      // state.items = localStorage.setItem("catalog", JSON.stringify(action.payload));
     },
   },
   extraReducers: (builder) => {
@@ -39,7 +41,6 @@ const catalogSlice = createSlice({
       .addCase(fetchItems.fulfilled, (state, action) => {
         state.isLoading = false;
         state.items = action.payload;
-        
       })
       .addCase(fetchItems.rejected, (state) => {
         state.isLoading = false;
