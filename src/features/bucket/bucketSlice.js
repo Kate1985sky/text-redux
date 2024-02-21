@@ -14,7 +14,7 @@ const bucketSlice = createSlice({
     addItemInBucket: (state, action) => {
       state.inBucket = state.inBucket.concat(action.payload);
     },
-    clearCart: (state) => { 
+    clearCart: (state) => {
       state.inBucket = [];
       state.amount = 0;
     },
@@ -36,26 +36,10 @@ const bucketSlice = createSlice({
       cartItemBuckit.amount = cartItemBuckit.amount - 1;
       cartItemBuckit.total = cartItemBuckit.total - cartItemBuckit.price;
     },
-    calculateTotals: (state) => {
-      let amount = 0;
-      let total = 0;
-      state.inBucket.forEach((item) => {
-        amount += item.amount;
-        total += item.amount * item.price;
-      });
-      state.amount = amount;
-      state.total = total;
-    },
   },
 });
 
-export const {
-  addItemInBucket,
-  removeItem,
-  clearCart,
-  increase,
-  dicrease,
-  calculateTotals,
-} = bucketSlice.actions;
+export const { addItemInBucket, removeItem, clearCart, increase, dicrease } =
+  bucketSlice.actions;
 
 export default bucketSlice.reducer;

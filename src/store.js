@@ -3,7 +3,7 @@ import modalReducer from "./features/modal/modalSlice";
 import catalogReducer from "./features/catalog/catalogSlice";
 import searchReducer from "./features/search/searchSlice";
 import bucketReducer from "./features/bucket/bucketSlice";
-import authSlice from "./features/auth/authSlice";
+import authReducer from "./features/auth/authSlice";
 
 function saveItemsLocalStorage({ getState }) {
   return next => action => {
@@ -28,7 +28,7 @@ const rootReducer = combineReducers({
   catalog: catalogReducer, 
   search: searchReducer,
   bucket: bucketReducer,
-  auth: authSlice.reducer
+  auth: authReducer,
 })
 
 
