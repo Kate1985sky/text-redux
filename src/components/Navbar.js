@@ -1,9 +1,13 @@
 import { CartIcon } from "../icons";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import React, { useMemo } from "react";
+import { logout } from "../features/auth/authSlice";
 
 const Navbar = () => {
+
+  const dispatch = useDispatch();
+
   const { inBucket } = useSelector((store) => store.bucket);
   const { isLogin } = useSelector((store) => store.auth);
 
@@ -29,9 +33,9 @@ const Navbar = () => {
             <NavLink as={NavLink} to="/add">
               + add
             </NavLink>
-            <NavLink as={NavLink} to="/logout">
+            <button onClick={() => {dispatch(logout())}}>
               logout
-            </NavLink>{" "}
+            </button>
           </>
         ) : (
           <NavLink as={NavLink} to="/login">

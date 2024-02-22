@@ -5,7 +5,7 @@ import CartContainer from "../pages/CartContainer/CartContainer";
 import { FormNewItem } from "../pages/FormNewItem/FormNewItem";
 import { Bucket } from "../pages/Bucket/Bucket";
 import { Login } from "../pages/Login/Login";
-import { Logout } from "../pages/Logout/Logout";
+
 
 
 const Main = () => {
@@ -16,7 +16,6 @@ const Main = () => {
       <Route path="/add" element={<FormNewItem />}></Route>
       <Route path="/bucket" element={<Bucket />}></Route>
       <Route path="/login" element={<Login />}></Route>
-      <Route path="/logout" element={<Logout />}></Route>
     </Routes>
   );
 };

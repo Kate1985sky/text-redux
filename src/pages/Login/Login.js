@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import login from "../../features/auth/authSlice";
+import { login } from "../../features/auth/authSlice";
 
 const defaultFormValues = {
   name: "",
