@@ -2,7 +2,7 @@ import logout from "../../features/auth/authSlice";
 import { useDispatch } from "react-redux";
 
 export const Logout = () => {
-  const dispatch = useDispatch();
-  return (dispatch(logout()));
+  // const dispatch = useDispatch();
+  return (<div>jjjj</div>);
 };
 

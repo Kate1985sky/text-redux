@@ -5,7 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 import React from "react";
 import Main from "./components/Main";
 import { fetchItems } from "./features/catalog/catalogSlice";
-import { Login } from "./pages/Login/Login";
+// import { Login } from "./pages/Login/Login";
 import Modal from "./components/Modal";
 
 function App() {
@@ -17,11 +17,6 @@ function App() {
     dispatch(fetchItems());
   }, []);
 
-  // if (typeof islogin === false) {
-  //   return <div>
-      
-  //   </div>
-  // }
 
   return (
     <BrowserRouter>
