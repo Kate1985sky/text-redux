@@ -56,9 +56,9 @@ export const Login = () => {
           </label>
         </form>
         <button
-          onClick={() => 
+          onClick={() => {
             dispatch(login())
-          }
+          }}
           type="submit"
           className="submit"
         >
