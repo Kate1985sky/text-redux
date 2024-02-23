@@ -32,8 +32,9 @@ export const Login = () => {
 
   return (
     <section>
-      <div className="addCart">
-        <form onSubmit={submitForm}>
+      <div className="container-login">
+        <h3>Login form</h3>
+        <form className="container-form" onSubmit={submitForm}>
           <label className="form">
             <input
               className="form-input"

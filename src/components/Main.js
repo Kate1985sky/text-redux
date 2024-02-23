@@ -6,8 +6,6 @@ import { FormNewItem } from "../pages/FormNewItem/FormNewItem";
 import { Bucket } from "../pages/Bucket/Bucket";
 import { Login } from "../pages/Login/Login";
 
-
-
 const Main = () => {
   return (
     <Routes>
@@ -21,4 +19,3 @@ const Main = () => {
 };
 
 export default Main;
-
