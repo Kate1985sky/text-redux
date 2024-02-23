@@ -28,18 +28,18 @@ const Navbar = () => {
               <h3>redux toolkit</h3>
             </NavLink>
             <NavLink as={NavLink} to="/search">
-              search
+              <h4>search</h4>
             </NavLink>
             <NavLink as={NavLink} to="/add">
-              + add
+             <h4> + add</h4>
             </NavLink>
-            <button onClick={() => {dispatch(logout())}}>
-              logout
+            <button className="btn-logout" onClick={() => {dispatch(logout())}}>
+              <h4>logout</h4>
             </button>
           </>
         ) : (
           <NavLink as={NavLink} to="/login">
-            log in
+            <h4>log in</h4>
           </NavLink>
         )}
 

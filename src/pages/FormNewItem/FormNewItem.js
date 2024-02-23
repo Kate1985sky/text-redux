@@ -27,7 +27,7 @@ export const FormNewItem = () => {
       ...prevState,
       [e.target.name]: e.target.value,
       id: crypto.randomUUID(),
-      img: "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      img: "https://cdn.comfy.ua/media/catalog/product/i/p/iphone_15_pro_max_natural_titanium_pdp_image_position-1__ww-en_1_.jpg",
       amount: 1,
     }));
   };

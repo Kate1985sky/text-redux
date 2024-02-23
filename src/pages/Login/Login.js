@@ -31,13 +31,13 @@ export const Login = () => {
   };
 
   return (
-    <section>
+    <section className="wrapper-login">
       <div className="container-login">
-        <h3>Login form</h3>
+        <h3 className="title-search">Login form</h3>
         <form className="container-form" onSubmit={submitForm}>
           <label className="form">
             <input
-              className="form-input"
+              className="form-input-login"
               type="text"
               onChange={hendlerChange}
               value={item["name"]}
@@ -47,7 +47,7 @@ export const Login = () => {
           </label>
           <label className="form">
             <input
-              className="form-input"
+              className="form-input-login"
               type="text"
               onChange={hendlerChange}
               value={item["password"]}
@@ -63,7 +63,7 @@ export const Login = () => {
           type="submit"
           className="submit"
         >
-          <span>login ={'>'}]</span>
+          <span>log in</span>
         </button>
       </div>
     </section>
