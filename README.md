@@ -18,4 +18,12 @@ I use the :
 3. useSearchParams hook works for search part.
 
 ## What I've learned
+
+In the project I've learned what is react-router and how to use it. I've learned new hooks:
+
+useNavigate,
+useSearchParams.
+
 ## How to work with the project
+
+Clone this repository to your local machine Run the app in the development mode by npm start Open http://localhost:3000 to view it in your browser. The page will reload when you make changes. You may also see any lint errors in the console.
