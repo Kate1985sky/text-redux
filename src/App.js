@@ -9,12 +9,12 @@ import Modal from "./components/Modal";
 
 function App() {
   const { isOpen } = useSelector((store) => store.modal);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchItems());
   }, []);
-
 
   return (
     <BrowserRouter>
@@ -24,7 +24,7 @@ function App() {
         <Main />
       </main>
     </BrowserRouter>
-  )
+  );
 }
 
 export default App;

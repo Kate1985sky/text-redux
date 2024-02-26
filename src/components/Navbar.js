@@ -5,7 +5,6 @@ import React, { useMemo } from "react";
 import { logout } from "../features/auth/authSlice";
 
 const Navbar = () => {
-
   const dispatch = useDispatch();
 
   const { inBucket } = useSelector((store) => store.bucket);
@@ -24,16 +23,20 @@ const Navbar = () => {
       <div className="nav-center">
         {isLogin ? (
           <>
-            <NavLink as={NavLink} to="/">
-              <h3>redux toolkit</h3>
-            </NavLink>
+            <h3>redux toolkit</h3>
+
             <NavLink as={NavLink} to="/search">
               <h4>search</h4>
             </NavLink>
             <NavLink as={NavLink} to="/add">
-             <h4> + add</h4>
+              <h4> + add</h4>
             </NavLink>
-            <button className="btn-logout" onClick={() => {dispatch(logout())}}>
+            <button
+              className="btn-logout"
+              onClick={() => {
+                dispatch(logout());
+              }}
+            >
               <h4>logout</h4>
             </button>
           </>
