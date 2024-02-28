@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { addItemInBucket } from "../features/bucket/bucketSlice";
 
+
 export const CatalogItem = ({ id, img, title, price }) => {
   const dispatch = useDispatch();
   const { items } = useSelector((store) => store.catalog);
@@ -8,6 +9,7 @@ export const CatalogItem = ({ id, img, title, price }) => {
   const idCartInBucket = id;
 
   const findCart = items.filter((item) => item.id === idCartInBucket);
+
 
   return (
     <article className="cart-item">
@@ -20,6 +22,7 @@ export const CatalogItem = ({ id, img, title, price }) => {
         className="btn"
         onClick={() => {
           dispatch(addItemInBucket(findCart));
+          
         }}
       >
         Add to cart
