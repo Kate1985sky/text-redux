@@ -12,7 +12,15 @@ const bucketSlice = createSlice({
   initialState,
   reducers: {
     addItemInBucket: (state, action) => {
-      state.inBucket = state.inBucket.concat(action.payload);
+      const alreadyInBucketIndex = state.inBucket.findIndex((item) => item.id === action.payload[0].id
+      );
+
+      if(alreadyInBucketIndex !== -1) {
+        state.inBucket[alreadyInBucketIndex].amount += 1;
+      } else {
+        state.inBucket = state.inBucket.concat(action.payload);
+      }
+      
     },
     clearCart: (state) => {
       state.inBucket = [];

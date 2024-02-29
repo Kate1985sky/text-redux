@@ -23,8 +23,8 @@ const Navbar = () => {
       <div className="nav-center">
         {isLogin ? (
           <>
-          <NavLink as={NavLink} to="/">
-            <h3>redux toolkit</h3>
+            <NavLink as={NavLink} to="/">
+              <h3>redux toolkit</h3>
             </NavLink>
             <NavLink as={NavLink} to="/search">
               <h4>search</h4>

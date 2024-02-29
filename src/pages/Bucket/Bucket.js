@@ -10,7 +10,7 @@ export const Bucket = () => {
   const total = useMemo(() => {
     let acc = 0;
     inBucket.forEach((item) => {
-      acc += item.amount * item.price; // parseInt(item.price, 10);
+      acc += item.amount * item.price; 
     });
 
     return acc;

@@ -1,8 +1,8 @@
 import {  useSelector } from "react-redux";
 import { CatalogItem } from "../../components/CatalogItem";
+
 export const Home = () => {
   const { items, isLoading } = useSelector((store) => store.catalog);
-
 
   if (isLoading) {
     return (
