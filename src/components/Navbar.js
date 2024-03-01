@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import React, { useMemo } from "react";
 import { logout } from "../features/auth/authSlice";
+import { LogoutIcon } from "../icons";
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -38,7 +39,7 @@ const Navbar = () => {
                 dispatch(logout());
               }}
             >
-              <h4>logout</h4>
+              <LogoutIcon />
             </button>
           </>
         ) : (
