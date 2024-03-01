@@ -12,14 +12,17 @@ export const FormNewItem = () => {
 
   const dispatch = useDispatch();
 
-  const submitForm = (e) => {
-    e.preventDefault();
-
-    resetForm();
-  };
-
   const resetForm = () => {
     setItem(defaultFormValues);
+  };
+
+  const submitForm = (e) => {
+    e.preventDefault();
+  };
+
+  const addAction = () => {
+    dispatch(addItem(item));
+    resetForm();
   };
 
   const hendlerChange = (e) => {
@@ -56,13 +59,7 @@ export const FormNewItem = () => {
           />
         </label>
       </form>
-      <button
-        onClick={() => {
-          dispatch(addItem(item));
-        }}
-        type="submit"
-        className="submit"
-      >
+      <button onClick={addAction} type="submit" className="submit">
         <span>add cart +</span>
       </button>
     </div>

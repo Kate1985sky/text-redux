@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { login } from "../../features/auth/authSlice";
 import { useNavigate } from "react-router-dom";
 
@@ -10,7 +10,7 @@ const defaultFormValues = {
 
 export const Login = () => {
   const [item, setItem] = useState(defaultFormValues);
-  const {isLogin} = useSelector((store) => store.auth);
+  
   let navigate = useNavigate();
 
   const dispatch = useDispatch();
@@ -34,7 +34,7 @@ export const Login = () => {
   };
 
   function handleLogin() {
-    dispatch(login());
+    dispatch(login(item));
     navigate("/");
   }
 
