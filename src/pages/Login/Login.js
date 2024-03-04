@@ -1,7 +1,9 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../features/auth/authSlice";
+import { logginError } from "../../features/auth/authSlice";
 import { useNavigate } from "react-router-dom";
+import { fakeUser } from "../../features/auth/authConfig";
 
 const defaultFormValues = {
   name: "",
@@ -10,16 +12,37 @@ const defaultFormValues = {
 
 export const Login = () => {
   const [item, setItem] = useState(defaultFormValues);
+
+  const { error } = useSelector((store) => store.auth);
+
+  // console.log("item", item.name);
+  // console.log("fakeUser", fakeUser.username);
+  // console.log("сравнение1", fakeUser.username === item.name && fakeUser.password === item.password);
+  // console.log("сравнение2", fakeUser.password === item.password);
   
+
   let navigate = useNavigate();
 
   const dispatch = useDispatch();
 
+  const checkLoginUser = () => {
+    if (
+      fakeUser.username === item.name &&
+      fakeUser.password === item.password
+    ) {
+      handleLogin();
+    } else {
+      dispatch(logginError(error));
+    }
+  }
+
   const submitForm = (e) => {
     e.preventDefault();
 
-   resetForm(); 
-};
+    checkLoginUser();
+
+    resetForm();
+  };
 
   const resetForm = () => {
     setItem(defaultFormValues);
@@ -34,7 +57,7 @@ export const Login = () => {
   };
 
   function handleLogin() {
-    dispatch(login(item));
+    dispatch(login());
     navigate("/");
   }
 
@@ -64,11 +87,7 @@ export const Login = () => {
             />
           </label>
         </form>
-        <button
-          onClick={handleLogin}
-          type="submit"
-          className="submit"
-        >
+        <button onClick={handleLogin} type="submit" className="submit">
           <span>log in</span>
         </button>
       </div>
