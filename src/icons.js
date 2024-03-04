@@ -14,8 +14,8 @@ export const CartIcon = () => {
         height={30}
       >
         <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
+          strokeLineCap="round"
+          strokeLineJoin="round"
           d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
         />
       </svg>
@@ -40,8 +40,8 @@ export const LogoutIcon = () => {
           stroke: "none",
           strokeWidth: 2,
           strokeDasharray: "none",
-          strokeLinecap: "butt",
-          strokeLinejoin: "miter",
+          strokeLineCap: "butt",
+          strokeLineJoin: "miter",
           strokeMiterlimit: 10,
           fill: "none",
           fillRule: "nonzero",
@@ -56,15 +56,15 @@ export const LogoutIcon = () => {
             stroke: "none",
             strokeWidth: 2,
             strokeDasharray: "none",
-            strokeLinecap: "butt",
-            strokeLinejoin: "miter",
+            strokeLineCap: "butt",
+            strokeLineJoin: "miter",
             strokeMiterlimit: 10,
             fill: "white",
             fillRule: "nonzero",
             opacity: 1,
           }}
           transform=" matrix(1 0 0 1 0 0) "
-          stroke-linecap="round"
+          strokeLinecap="round"
         />
         <path
           d="M 45 42.645 c -11.757 0 -21.323 -9.565 -21.323 -21.322 S 33.243 0 45 0 c 11.757 0 21.322 9.565 21.322 21.323 S 56.757 42.645 45 42.645 z M 45 4 c -9.552 0 -17.323 7.771 -17.323 17.323 S 35.448 38.645 45 38.645 s 17.322 -7.771 17.322 -17.322 S 54.552 4 45 4 z"
@@ -72,15 +72,15 @@ export const LogoutIcon = () => {
             stroke: "none",
             strokeWidth: 2,
             strokeDasharray: "none",
-            strokeLinecap: "butt",
-            strokeLinejoin: "miter",
+            strokeLineCap: "butt",
+            strokeLineJoin: "miter",
             strokeMiterlimit: 10,
             fill: "white",
             fillRule: "nonzero",
             opacity: 1,
           }}
           transform=" matrix(1 0 0 1 0 0) "
-          stroke-linecap="round"
+          strokeLinecap="round"
         />
         <path
           d="M 82.187 81.281 c 0.032 -0.047 0.053 -0.099 0.081 -0.148 c 0.036 -0.065 0.075 -0.127 0.103 -0.196 c 0.027 -0.065 0.042 -0.133 0.062 -0.2 c 0.017 -0.058 0.039 -0.113 0.051 -0.173 c 0.051 -0.258 0.051 -0.525 0 -0.783 c -0.012 -0.06 -0.034 -0.115 -0.051 -0.173 c -0.02 -0.067 -0.035 -0.135 -0.062 -0.2 c -0.028 -0.069 -0.067 -0.131 -0.103 -0.196 c -0.027 -0.049 -0.049 -0.101 -0.081 -0.148 c -0.074 -0.11 -0.157 -0.213 -0.251 -0.307 l -7.827 -7.827 c -0.781 -0.781 -2.047 -0.781 -2.828 0 s -0.781 2.047 0 2.828 l 4.414 4.414 H 65.322 c -4.093 0 -7.422 -3.329 -7.422 -7.422 v -4.313 c 0 -1.104 -0.896 -2 -2 -2 s -2 0.896 -2 2 v 4.313 c 0 6.298 5.124 11.422 11.422 11.422 h 10.373 l -4.414 4.414 c -0.781 0.781 -0.781 2.047 0 2.828 C 71.672 89.805 72.184 90 72.695 90 s 1.023 -0.195 1.414 -0.586 l 7.827 -7.827 C 82.03 81.494 82.113 81.391 82.187 81.281 z"
@@ -88,15 +88,15 @@ export const LogoutIcon = () => {
             stroke: "none",
             strokeWidth: 1,
             strokeDasharray: "none",
-            strokeLinecap: "butt",
-            strokeLinejoin: "miter",
+            strokeLineCap: "butt",
+            strokeLineJoin: "miter",
             strokeMiterlimit: 10,
             fill: "white",
             fillRule: "nonzero",
             opacity: 1,
           }}
           transform=" matrix(1 0 0 1 0 0) "
-          stroke-linecap="round"
+          strokeLinecap="round"
         />
       </g>
     </svg>

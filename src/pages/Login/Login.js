@@ -15,31 +15,22 @@ export const Login = () => {
 
   const { error } = useSelector((store) => store.auth);
 
-  // console.log("item", item.name);
-  // console.log("fakeUser", fakeUser.username);
-  // console.log("сравнение1", fakeUser.username === item.name && fakeUser.password === item.password);
-  // console.log("сравнение2", fakeUser.password === item.password);
-  
-
   let navigate = useNavigate();
 
   const dispatch = useDispatch();
 
-  const checkLoginUser = () => {
+  const submitForm = (e) => {
+    e.preventDefault();
+
     if (
       fakeUser.username === item.name &&
       fakeUser.password === item.password
     ) {
-      handleLogin();
+      navigate("/");
+      dispatch(login());
     } else {
-      dispatch(logginError(error));
+      dispatch(logginError({ message: "Wrong login or password" }));
     }
-  }
-
-  const submitForm = (e) => {
-    e.preventDefault();
-
-    checkLoginUser();
 
     resetForm();
   };
@@ -52,19 +43,14 @@ export const Login = () => {
     setItem((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value,
-      id: crypto.randomUUID(),
     }));
   };
-
-  function handleLogin() {
-    dispatch(login());
-    navigate("/");
-  }
 
   return (
     <section className="wrapper-login">
       <div className="container-login">
         <h3 className="title-search">Login form</h3>
+        {error && <div className="error">{error}</div>}
         <form className="container-form" onSubmit={submitForm}>
           <label className="form">
             <input
@@ -86,10 +72,10 @@ export const Login = () => {
               placeholder="password"
             />
           </label>
+          <button type="submit" className="submit">
+            <span>log in</span>
+          </button>
         </form>
-        <button onClick={handleLogin} type="submit" className="submit">
-          <span>log in</span>
-        </button>
       </div>
     </section>
   );

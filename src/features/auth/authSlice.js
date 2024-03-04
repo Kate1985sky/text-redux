@@ -1,11 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-
 const initialState = {
   isLogin: localStorage.getItem("auth-status")
     ? JSON.parse(localStorage.getItem("auth-status")).isLogin
     : false,
-  error: "take your time and try again",
+  error: null,
 };
 
 const authSlice = createSlice({
@@ -14,13 +13,12 @@ const authSlice = createSlice({
   reducers: {
     login: (state) => {
       state.isLogin = true;
-      console.log("alert", 1);
     },
     logout: (state) => {
       state.isLogin = false;
     },
     logginError: (state, action) => {
-      console.log("alert-2", action.payload.error);
+      state.error = action.payload.message;
     },
   },
 });

@@ -378,6 +378,7 @@ new cart
   height: 50px;
   border-radius: 8px;
   border: none;
+  margin-top: 10px;
   background-color: var(--clr-red-light);
   color: var(--clr-grey-10);
   cursor: pointer;

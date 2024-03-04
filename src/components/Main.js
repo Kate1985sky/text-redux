@@ -13,10 +13,10 @@ const Main = () => {
     <Routes>
       {isLogin ? (
         <>
+          <Route path="/" element={<Home />}></Route>
           <Route path="/search" element={<Search />}></Route>
           <Route path="/add" element={<FormNewItem />}></Route>
           <Route path="/bucket" element={<Bucket />}></Route>
-          <Route path="/" element={<Home />}></Route>
         </>
       ) : (
         <Route path="/login" element={<Login />}></Route>
