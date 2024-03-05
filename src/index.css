@@ -180,12 +180,6 @@ Cart
   text-align: center;
   margin-bottom: 3rem;
 }
-/* .empty-cart {
-  text-transform: lowercase;
-  color: var(--clr-grey-5);
-  margin-top: 1rem;
-  text-align: center;
-} */
 .cart footer {
   margin-top: 4rem;
   text-align: center;
@@ -411,13 +405,34 @@ Login
 .container-login {
   width: 450px;
   height: 315px;
+  position: relative;
   background-color: rgb(219, 213, 213);
   border-radius: 16px;
   margin: 0 auto;
   text-align: center;
+
+}
+.error {
+  width: 270px;
+  height: 25px;
+  left: 85px;
+  top: 63px;
+  position: absolute;
+  border: 1px solid red;
+  box-shadow: 5px 5px 5px red;
+  border-radius: 3px;
+  overflow-x: hidden;
+}
+.error-span {
+  text-align: center;
+  align-items: center;
+  font-size: 17px;
+  letter-spacing: 2px;
+  margin-bottom: 4px;
 }
 .title-search {
   padding-top: 25px;
+  padding-bottom: 9px;
 }
 .form-input-login {
   display: block;

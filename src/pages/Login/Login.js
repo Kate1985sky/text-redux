@@ -50,7 +50,7 @@ export const Login = () => {
     <section className="wrapper-login">
       <div className="container-login">
         <h3 className="title-search">Login form</h3>
-        {error && <div className="error">{error}</div>}
+        {error && <div className="error"><span className="error-span">{error}</span></div>}
         <form className="container-form" onSubmit={submitForm}>
           <label className="form">
             <input
