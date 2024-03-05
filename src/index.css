@@ -410,7 +410,6 @@ Login
   border-radius: 16px;
   margin: 0 auto;
   text-align: center;
-
 }
 .error {
   width: 270px;
@@ -421,7 +420,7 @@ Login
   border: 1px solid red;
   box-shadow: 5px 5px 5px red;
   border-radius: 3px;
-  overflow-x: hidden;
+  color: red;
 }
 .error-span {
   text-align: center;
