@@ -2,9 +2,13 @@ A study project for practicing react-redux toolkit and react-router-dom.
 
 ## About this project
 
-This project is about a product catalog that is launched when a user logs in to the site, using a feth request, you can add an item to the cart, delete, increase or decrease the number of products in the cart, empty the cart of goods, create a new product card, using the useMemo function I calculated quantity in cart and total cost.
 
-There are 4 pages: a Bucket page, formNewItem, Login, Search.
+This project is dedicated to a product catalog, which is launched when the user logs in to the site; during authorization, a comparison is made to ensure that the login and password are entered correctly, after which the user is taken to the site or must try again; using a selection request, you can add a product to the cart, delete it, increase or reduce the number of goods in the cart, create a new product card using the product function useMemo Calculated the number of carts and the cost.
+
+There are 4 pages: cart pages, NewItem form, login, search.
+Login and password for login:
+name: admin
+password: test
 
 
 ## Tools and technologies
