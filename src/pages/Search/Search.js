@@ -52,7 +52,7 @@ export const Search = () => {
               dispatch(searchItem());
             }}
           >
-            <span>go ahead</span>
+            <span>find</span>
           </button>
         </form>
       </div>
