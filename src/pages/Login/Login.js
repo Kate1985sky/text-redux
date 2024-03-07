@@ -39,7 +39,7 @@ export const Login = () => {
     setItem(defaultFormValues);
   };
 
-  const hendlerChange = (e) => {
+  const changeHandler = (e) => {
     setItem((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value,
@@ -56,7 +56,7 @@ export const Login = () => {
             <input
               className="form-input-login"
               type="text"
-              onChange={hendlerChange}
+              onChange={changeHandler}
               value={item["name"]}
               name="name"
               placeholder="name"
@@ -65,8 +65,8 @@ export const Login = () => {
           <label className="form">
             <input
               className="form-input-login"
-              type="text"
-              onChange={hendlerChange}
+              type="password"
+              onChange={changeHandler}
               value={item["password"]}
               name="password"
               placeholder="password"

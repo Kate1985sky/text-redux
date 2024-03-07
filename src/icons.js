@@ -14,8 +14,8 @@ export const CartIcon = () => {
         height={30}
       >
         <path
-          strokeLineCap="round"
-          strokeLineJoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
           d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
         />
       </svg>
@@ -40,8 +40,8 @@ export const LogoutIcon = () => {
           stroke: "none",
           strokeWidth: 2,
           strokeDasharray: "none",
-          strokeLineCap: "butt",
-          strokeLineJoin: "miter",
+          strokeLinecap: "butt",
+          strokeLinejoin: "miter",
           strokeMiterlimit: 10,
           fill: "none",
           fillRule: "nonzero",
@@ -56,8 +56,8 @@ export const LogoutIcon = () => {
             stroke: "none",
             strokeWidth: 2,
             strokeDasharray: "none",
-            strokeLineCap: "butt",
-            strokeLineJoin: "miter",
+            strokeLinecap: "butt",
+            strokeLinejoin: "miter",
             strokeMiterlimit: 10,
             fill: "white",
             fillRule: "nonzero",
@@ -72,8 +72,8 @@ export const LogoutIcon = () => {
             stroke: "none",
             strokeWidth: 2,
             strokeDasharray: "none",
-            strokeLineCap: "butt",
-            strokeLineJoin: "miter",
+            strokeLinecap: "butt",
+            strokeLinejoin: "miter",
             strokeMiterlimit: 10,
             fill: "white",
             fillRule: "nonzero",
@@ -88,8 +88,8 @@ export const LogoutIcon = () => {
             stroke: "none",
             strokeWidth: 1,
             strokeDasharray: "none",
-            strokeLineCap: "butt",
-            strokeLineJoin: "miter",
+            strokeLinecap: "butt",
+            strokeLinejoin: "miter",
             strokeMiterlimit: 10,
             fill: "white",
             fillRule: "nonzero",
