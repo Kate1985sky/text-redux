@@ -1,7 +1,7 @@
 {
   "name": "redux",
   "version": "0.1.0",
-  "homepage": "https://kate1985sky.github.io/test-redux",
+  "homepage": "https://Kate1985sky.github.io/test-redux",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^2.1.0",

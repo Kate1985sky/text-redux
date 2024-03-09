@@ -6,9 +6,7 @@ A study project for practicing react-redux toolkit and react-router-dom.
 This project is dedicated to a product catalog, which is launched when the user logs in to the site; during authorization, a comparison is made to ensure that the login and password are entered correctly, after which the user is taken to the site or must try again; using a selection request, you can add a product to the cart, delete it, increase or reduce the number of goods in the cart, create a new product card using the product function useMemo Calculated the number of carts and the cost.
 
 There are 4 pages: cart pages, NewItem form, login, search.
-Login and password for login:
-name: admin
-password: test
+
 
 
 ## Tools and technologies
@@ -30,4 +28,8 @@ useSearchParams.
 
 ## How to work with the project
 
-Clone this repository to your local machine Run the app in the development mode by npm start Open http://localhost:3000 to view it in your browser. The page will reload when you make changes. You may also see any lint errors in the console.
+if you want to start working please click to login.
+
+name and password for login:
+name: admin
+password: test
