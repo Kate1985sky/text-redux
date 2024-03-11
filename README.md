@@ -26,7 +26,7 @@ In the project I've learned what is react-router and how to use it. I've learned
 useNavigate,
 useSearchParams.
 
-## How to work with the project
+## How to run project
 
 if you want to start working please click to login.
 
