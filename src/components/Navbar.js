@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import React, { useMemo } from "react";
 import { logout } from "../features/auth/authSlice";
 import { LogoutIcon } from "../icons";
+import i18next from "i18next";
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -53,6 +54,14 @@ const Navbar = () => {
           <div className="amount-container">
             <p className="total-amount">{amount}</p>
           </div>
+        </div>
+        <div>
+          <button onClick={() => i18next.changeLanguage("en")}>
+            English
+          </button>
+          <button onClick={() => i18next.changeLanguage("uk")}>
+            Ukrainian
+          </button>
         </div>
       </div>
     </nav>
