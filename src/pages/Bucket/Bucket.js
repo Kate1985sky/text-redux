@@ -2,9 +2,11 @@ import { CartItem } from "../../components/CartItem";
 import { useSelector, useDispatch } from "react-redux";
 import { openModal } from "../../features/modal/modalSlice";
 import { useMemo } from "react";
+import { useTranslation } from "react-i18next";
 
 export const Bucket = () => {
   const dispatch = useDispatch();
+  const { t } = useTranslation();
   const { inBucket } = useSelector((store) => store.bucket);
 
   const total = useMemo(() => {
@@ -19,7 +21,7 @@ export const Bucket = () => {
   if (inBucket.length === 0) {
     return (
       <div className="emptyContainer">
-        <h3>Nothing adding here</h3>
+        <h3>{t("nothing_adding_here")}</h3>
       </div>
     );
   }
@@ -34,7 +36,7 @@ export const Bucket = () => {
         <hr />
         <div className="cart-total">
           <h4>
-            total <span>${total.toFixed(2)}</span>
+            {t("total")} <span>${total.toFixed(2)}</span>
           </h4>
         </div>
         <button
@@ -43,7 +45,7 @@ export const Bucket = () => {
             dispatch(openModal());
           }}
         >
-          clear cart
+          {t("clear_cart")}
         </button>
       </footer>
     </section>

@@ -3,8 +3,10 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { CatalogItem } from "../../components/CatalogItem";
 import { searchItem } from "../../features/search/searchSlice";
+import { useTranslation } from "react-i18next";
 
 export const Search = () => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
 
   let [searchParams] = useSearchParams();
@@ -52,7 +54,7 @@ export const Search = () => {
               dispatch(searchItem());
             }}
           >
-            <span>find</span>
+            <span>{t("find")}</span>
           </button>
         </form>
       </div>

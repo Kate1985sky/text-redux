@@ -1,8 +1,10 @@
 import {  useSelector } from "react-redux";
 import { CatalogItem } from "../../components/CatalogItem";
+import { useTranslation } from "react-i18next";
 
 export const Home = () => {
   const { items, isLoading } = useSelector((store) => store.catalog);
+  const { t } = useTranslation();
 
   if (isLoading) {
     return (
@@ -15,7 +17,7 @@ export const Home = () => {
   return (
     <section className="cart">
       <header>
-        <h2>Our catalog</h2>
+        <h2>{t('our_catalog')}</h2>
       </header>
       <div>
         {items.map((item) => {

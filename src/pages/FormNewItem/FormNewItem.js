@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addItem } from "../../features/catalog/catalogSlice";
+import { useTranslation } from "react-i18next";
 
 const defaultFormValues = {
   title: "",
@@ -11,6 +12,7 @@ export const FormNewItem = () => {
   const [item, setItem] = useState(defaultFormValues);
 
   const dispatch = useDispatch();
+  const { t } = useTranslation();
 
   const resetForm = () => {
     setItem(defaultFormValues);
@@ -60,7 +62,7 @@ export const FormNewItem = () => {
         </label>
       </form>
       <button onClick={addAction} type="submit" className="submit">
-        <span>add cart +</span>
+        <span>{t('add_cart')}</span>
       </button>
     </div>
   );

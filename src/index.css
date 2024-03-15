@@ -438,4 +438,12 @@ Login
   margin-left: 75px;
   padding: 0 15px;
 }
+.btn-language {
+  border: none;
+  background-color: var(--clr-primary);
+  padding: 3px;
+  color: rgb(238, 235, 235);
+  letter-spacing: 1px;
+  cursor: pointer;
+}
 

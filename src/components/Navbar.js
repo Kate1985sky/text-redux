@@ -56,10 +56,10 @@ const Navbar = () => {
           </div>
         </div>
         <div>
-          <button onClick={() => i18next.changeLanguage("en")}>
-            English
+          <button disabled={i18next.language === "en"} className="btn-language" onClick={() => i18next.changeLanguage("en")}>
+            English /
           </button>
-          <button onClick={() => i18next.changeLanguage("uk")}>
+          <button disabled={i18next.language === "uk"} className="btn-language" onClick={() => i18next.changeLanguage("uk")}>
             Ukrainian
           </button>
         </div>

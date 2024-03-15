@@ -1,9 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
 import { addItemInBucket } from "../features/bucket/bucketSlice";
-
+import { useTranslation } from "react-i18next";
 
 export const CatalogItem = ({ id, img, title, price }) => {
   const dispatch = useDispatch();
+  const { t } = useTranslation();
   const { items } = useSelector((store) => store.catalog);
 
   const idCartInBucket = id;
@@ -25,7 +26,7 @@ export const CatalogItem = ({ id, img, title, price }) => {
           
         }}
       >
-        Add to cart
+       {t('add_to_cart')}
       </button>
     </article>
   );
