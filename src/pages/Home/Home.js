@@ -9,7 +9,7 @@ export const Home = () => {
   if (isLoading) {
     return (
       <div className="loading"> 
-        <h1>Loading...</h1>
+        <h1>{t("loading")}...</h1>
       </div>
     );
   }

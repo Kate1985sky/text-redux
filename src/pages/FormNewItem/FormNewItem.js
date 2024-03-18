@@ -47,7 +47,7 @@ export const FormNewItem = () => {
             onChange={hendlerChange}
             value={item["title"]}
             name="title"
-            placeholder="title"
+            placeholder={t("title")}
           />
         </label>
         <label className="form">
@@ -57,7 +57,7 @@ export const FormNewItem = () => {
             onChange={hendlerChange}
             value={item["price"]}
             name="price"
-            placeholder="price"
+            placeholder={t("price")}
           />
         </label>
       </form>

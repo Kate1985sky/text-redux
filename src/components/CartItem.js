@@ -1,9 +1,11 @@
 import { ChevronDown, ChevronUp } from "../icons";
 import { removeItem, increase, dicrease } from "../features/bucket/bucketSlice";
 import { useDispatch } from "react-redux";
+import { useTranslation } from "react-i18next";
 
 export const CartItem = ({ id, img, title, price, amount }) => {
   const dispatch = useDispatch();
+  const { t } = useTranslation();
 
   return (
     <article className="cart-item">
@@ -17,7 +19,7 @@ export const CartItem = ({ id, img, title, price, amount }) => {
             dispatch(removeItem(id));
           }}
         >
-          remove
+          {t("remove")}
         </button>
       </div>
       <div>

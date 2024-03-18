@@ -5,9 +5,13 @@ import React, { useMemo } from "react";
 import { logout } from "../features/auth/authSlice";
 import { LogoutIcon } from "../icons";
 import i18next from "i18next";
+import { LOCALS } from "../constants/languages";
+import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
   const dispatch = useDispatch();
+  const { t } = useTranslation();
+  
 
   const { inBucket } = useSelector((store) => store.bucket);
   const { isLogin } = useSelector((store) => store.auth);
@@ -29,10 +33,10 @@ const Navbar = () => {
               <h3>redux toolkit</h3>
             </NavLink>
             <NavLink as={NavLink} to="/search">
-              <h4>search</h4>
+              <h4>{t("search")}</h4>
             </NavLink>
             <NavLink as={NavLink} to="/add">
-              <h4> + add</h4>
+              <h4>{t("add")}</h4>
             </NavLink>
             <button
               className="btn-logout"
@@ -45,7 +49,7 @@ const Navbar = () => {
           </>
         ) : (
           <NavLink as={NavLink} to="/login">
-            <h4>log in</h4>
+            <h4>{t("log_in")}</h4>
           </NavLink>
         )}
 
@@ -56,11 +60,11 @@ const Navbar = () => {
           </div>
         </div>
         <div>
-          <button disabled={i18next.language === "en"} className="btn-language" onClick={() => i18next.changeLanguage("en")}>
-            English /
+          <button disabled={i18next.language === LOCALS.EN} className="btn-language" onClick={() => i18next.changeLanguage("en")}>
+            {t("english")} /
           </button>
-          <button disabled={i18next.language === "uk"} className="btn-language" onClick={() => i18next.changeLanguage("uk")}>
-            Ukrainian
+          <button disabled={i18next.language === LOCALS.UK} className="btn-language" onClick={() => i18next.changeLanguage("uk")}>
+            {t("ukrainian")}
           </button>
         </div>
       </div>

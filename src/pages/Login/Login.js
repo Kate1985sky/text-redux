@@ -4,6 +4,7 @@ import { login } from "../../features/auth/authSlice";
 import { logginError } from "../../features/auth/authSlice";
 import { useNavigate } from "react-router-dom";
 import { fakeUser } from "../../features/auth/authConfig";
+import { useTranslation } from "react-i18next";
 
 const defaultFormValues = {
   name: "",
@@ -16,7 +17,7 @@ export const Login = () => {
   const { error } = useSelector((store) => store.auth);
 
   let navigate = useNavigate();
-
+  const { t } = useTranslation();
   const dispatch = useDispatch();
 
   const submitForm = (e) => {
@@ -49,7 +50,7 @@ export const Login = () => {
   return (
     <section className="wrapper-login">
       <div className="container-login">
-        <h3 className="title-search">Login form</h3>
+        <h3 className="title-search">{t("login_form")}</h3>
         {error && <div className="error"><span className="error-span">{error}</span></div>}
         <form className="container-form" onSubmit={submitForm}>
           <label className="form">
@@ -59,7 +60,7 @@ export const Login = () => {
               onChange={changeHandler}
               value={item["name"]}
               name="name"
-              placeholder="name"
+              placeholder={t("name")}
             />
           </label>
           <label className="form">
@@ -69,11 +70,11 @@ export const Login = () => {
               onChange={changeHandler}
               value={item["password"]}
               name="password"
-              placeholder="password"
+              placeholder={t("password")}
             />
           </label>
           <button type="submit" className="submit">
-            <span>log in</span>
+            <span>{t("log_in_login")}</span>
           </button>
         </form>
       </div>

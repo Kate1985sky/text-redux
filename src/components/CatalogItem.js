@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { addItemInBucket } from "../features/bucket/bucketSlice";
 import { useTranslation } from "react-i18next";
+import "../i18n";
 
 export const CatalogItem = ({ id, img, title, price }) => {
   const dispatch = useDispatch();
