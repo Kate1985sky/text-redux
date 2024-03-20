@@ -1,9 +1,9 @@
-A study project for practicing react-redux toolkit and react-router-dom.
+A study project for practicing react-redux toolkit and react-router-dom, react-i18next.
 
 ## About this project
 
 
-This project is dedicated to a product catalog, which is launched when the user logs in to the site; during authorization, a comparison is made to ensure that the login and password are entered correctly, after which the user is taken to the site or must try again; using a selection request, you can add a product to the cart, delete it, increase or reduce the number of goods in the cart, create a new product card using the product function useMemo Calculated the number of carts and the cost.
+This project is dedicated to a product catalog, which is launched when the user logs in to the site; during authorization, a comparison is made to ensure that the login and password are entered correctly, after which the user is taken to the site or must try again; using a selection request, you can add a product to the cart, delete it, increase or reduce the number of goods in the cart, create a new product card using the product function useMemo Calculated the number of carts and the cost, also in the navbar there are two buttons with which you can switch our page to Ukrainian or English.
 
 There are 4 pages: cart pages, NewItem form, login, search.
 
@@ -19,12 +19,15 @@ I use the :
 
 3. useSearchParams hook works for search part.
 
+4. useTranslation hook work to translate your page.
+
 ## What I've learned
 
 In the project I've learned what is react-router and how to use it. I've learned new hooks:
 
 useNavigate,
-useSearchParams.
+useSearchParams,
+useTranslation
 
 ## How to run project
 
