@@ -12,15 +12,20 @@ const initialState = {
 
 export const fetchItems = createAsyncThunk(
   "catalog/fetchItems",
-  async (thunkAPI, { getState }) => {
+  async (_, thunkAPI) => {
+    const { getState, rejectWithValue } = thunkAPI;
     if (getState().catalog.items.length > 0) {
-      return thunkAPI.rejectWithValue("something");
+      return rejectWithValue("something");
     }
     try {
       const resp = await axios(url);
       return resp.data;
     } catch (error) {
-      return thunkAPI.rejectWithValue("something");
+      console.error(
+        "Error fetching items: ",
+        error.response ? error.response.data : error.message
+      );
+      return rejectWithValue(error.message || "Something went wrong");
     }
   }
 );
@@ -42,8 +47,9 @@ const catalogSlice = createSlice({
         state.isLoading = false;
         state.items = action.payload;
       })
-      .addCase(fetchItems.rejected, (state) => {
+      .addCase(fetchItems.rejected, (state, action) => {
         state.isLoading = false;
+        console.error("Fetch rejected: ", action.payload);
       });
   },
 });

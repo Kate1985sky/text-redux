@@ -8,9 +8,9 @@ import { fetchItems } from "./features/catalog/catalogSlice";
 import Modal from "./components/Modal";
 
 
+
 function App() {
-  const { isOpen } = useSelector((store) => store.modal);
-  
+  const { isOpen } = useSelector((store) => store.modal); 
 
   const dispatch = useDispatch();
 
