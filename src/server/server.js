@@ -1,25 +1,14 @@
 const express = require('express');
-const request = require('request');
+const { createProxyMiddleware } = require('http-proxy-middleware');
 
 const app = express();
 
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  next();
+app.use('/api', createProxyMiddleware({
+    target: 'https://course-api.com/react-useReducer-cart-project',
+    changeOrigin: true,
+}));
+
+app.listen(5000, () => {
+    console.log('Proxy server running on port 5000');
 });
 
-app.get('/react-useReducer-cart-project', (req, res) => {
-  request(
-    { url: 'https://course-api.com/react-useReducer-cart-project' },
-    (error, response, body) => {
-      if (error || response.statusCode !== 200) {
-        return res.status(500).json({ type: 'error', message: err.message });
-      }
-
-      res.json(JSON.parse(body));
-    }
-  )
-});
-
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`listening on ${PORT}`));
